@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Assignment_Demo</string>
+    <string-array name="expenseTypes">
+        <item>Select an expense type</item>
+        <item>Tourisim</item>
+        <item>Study</item>
+        <item>Shopping</item>
+    </string-array>
+</resources>
