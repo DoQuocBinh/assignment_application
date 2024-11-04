@@ -13,8 +13,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Calendar;
+
+import database.DatabaseHelper;
+import database.ExpenseEntity;
 
 public class NewExpense extends AppCompatActivity {
 
@@ -69,6 +73,17 @@ public class NewExpense extends AppCompatActivity {
 
                 EditText expenseDateControl = findViewById(R.id.editTextDate);
                 String expenseDate = expenseDateControl.getText().toString();
+
+                ExpenseEntity expense = new ExpenseEntity();
+                expense.expenseName = expenseName;
+                expense.amount = expenseAmount;
+                expense.expenseType = expenseType;
+                expense.expenseDate = expenseDate;
+
+                DatabaseHelper dbHelper = new DatabaseHelper(getApplication());
+                long id = dbHelper.insertExpense(expense);
+                Toast.makeText(getApplication(),String.valueOf(id),Toast.LENGTH_LONG).show();
+
 
             }
         });
