@@ -9,8 +9,10 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import java.util.Calendar;
 
@@ -52,5 +54,24 @@ public class NewExpense extends AppCompatActivity {
                 datePicker.show(getSupportFragmentManager(), "datePicker");
             }
         });
+        Button btSave = findViewById(R.id.button);
+        btSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText expenseNameControl = findViewById(R.id.editName);
+                String expenseName = expenseNameControl.getText().toString();
+
+                Spinner expenseTypeControl = findViewById(R.id.expenseType);
+                String expenseType  = expenseTypeControl.getSelectedItem().toString();
+
+                EditText expenseAmountControl = findViewById(R.id.editAmount);
+                String expenseAmount = expenseAmountControl.getText().toString();
+
+                EditText expenseDateControl = findViewById(R.id.editTextDate);
+                String expenseDate = expenseDateControl.getText().toString();
+
+            }
+        });
+
     }
 }
