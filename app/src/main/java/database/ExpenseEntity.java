@@ -1,5 +1,7 @@
 package database;
 
+import androidx.annotation.NonNull;
+
 public class ExpenseEntity {
     public int id;
     public String expenseName;
@@ -8,6 +10,12 @@ public class ExpenseEntity {
     public String amount;
 
     public ExpenseEntity() {
+
+    }
+    @NonNull
+    @Override
+    public String toString() {
+        return this.expenseName + "\n" + this.expenseDate + "\n" + this.amount;
 
     }
 

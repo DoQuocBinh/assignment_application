@@ -30,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, NewExpense.class);
             startActivity(intent);
         }
-        else if (item.getItemId()== R.id.listExpenses)
-            Toast.makeText(MainActivity.this,"List all expenses ", Toast.LENGTH_LONG).show();
+        else if (item.getItemId()== R.id.listExpenses){
+            Intent intent = new Intent(MainActivity.this, ListExpenses.class);
+            startActivity(intent);
+        }
+
         return true;
     }
 
